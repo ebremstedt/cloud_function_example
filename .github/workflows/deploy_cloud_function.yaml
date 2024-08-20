@@ -20,7 +20,7 @@ jobs:
         workload_identity_provider: 'projects/411203856706/locations/global/workloadIdentityPools/github-identity-pool/providers/github-provider'
 
 
-    - name: Deploy Cloud Function
+    - name: Deploy Cloud FunctioN
       run: |
         gcloud functions deploy weather_to_bq \
           --region=us-central1 \
