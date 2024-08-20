@@ -21,13 +21,7 @@ jobs:
       with:
         project_id: 'de-ai23'
         workload_identity_provider: 'projects/411203856706/locations/global/workloadIdentityPools/github-identity-pool/providers/github-provider'
-
-
-    - name: Print Service Account Email
-      run: |
-        echo "Service Account Email: $(gcloud auth list --filter=status:ACTIVE --format="value(account)")"
-
-
+        service_account: "deploy-cf@de-ai23.iam.gserviceaccount.com"
 
     - name: Deploy Cloud FunctioN
       run: |
