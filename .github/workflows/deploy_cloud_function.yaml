@@ -13,12 +13,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Cloud SDK
-      uses: google-github-actions/setup-gcloud@v1
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v2'
       with:
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
-        project_id: de-ai23
-        export_default_credentials: true
+        project_id: 'de-ai23'
+        workload_identity_provider: 'projects/411203856706/locations/global/workloadIdentityPools/github-identity-pool/providers/github-provider'
+
 
     - name: Deploy Cloud Function
       run: |
