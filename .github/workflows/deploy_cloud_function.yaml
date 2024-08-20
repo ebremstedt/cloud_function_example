@@ -21,8 +21,7 @@ jobs:
       with:
         project_id: 'de-ai23'
         workload_identity_provider: 'projects/411203856706/locations/global/workloadIdentityPools/github-identity-pool/providers/github-provider'
-        service_account: "deploy-cf@de-ai23.iam.gserviceaccount.com"
-        token_format: "access_token"
+        service_account: 'deploy-cf@de-ai23.iam.gserviceaccount.com'
 
     - name: Deploy Cloud FunctioN
       run: |
