@@ -19,9 +19,7 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v2'
       with:
-        project_id: 'de-ai23'
-        service_account: 'deploy-cloud-function@de-ai23.iam.gserviceaccount.com'
-        workload_identity_provider: projects/411203856706/locations/global/workloadIdentityPools/github-cf/providers/my-repo
+        credentials_json: '${{ secrets.GCP_SA_KEY }}'
 
     - name: 'gcloud config list'
       run: 'gcloud config list'
