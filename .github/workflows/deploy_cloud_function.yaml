@@ -20,16 +20,14 @@ jobs:
       uses: 'google-github-actions/auth@v2'
       with:
         project_id: 'de-ai23'
-        workload_identity_provider: 'projects/411203856706/locations/global/workloadIdentityPools/github-identity-pool/providers/github-provider'
-        service_account: 'deploy-cf@de-ai23.iam.gserviceaccount.com'
-        token_format: 'access_token'
+        workload_identity_provider: projects/411203856706/locations/global/workloadIdentityPools/github-actions/providers/cloud-functions-example
 
     - name: 'gcloud config list'
       run: 'gcloud config list'
 
     - name: Deploy Cloud FunctioN
       run: |
-        gcloud functions deploy weather_to_bq \
+        gcloud functions deploy cloud-functions-example \
           --region=us-central1 \
           --runtime=python310 \
           --trigger-http \
