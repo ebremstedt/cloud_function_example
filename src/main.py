@@ -2,9 +2,10 @@ import os
 from read import fetch_weather_data
 from transform import parse_json_response
 from write import write_to_bq
+from requests import Request
 
 
-def main():
+def main(request: Request):
     api_key = os.getenv('API_KEY')
     project_id = os.getenv('GCP_PROJECT')
 
@@ -23,6 +24,8 @@ def main():
     transformed_data = parse_json_response(data=data)
 
     write_to_bq(json_data=transformed_data, table_id=destination_table)
+
+    return 'Massive success!', 200
 
 
 if __name__ == "__main__":
