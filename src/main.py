@@ -7,7 +7,7 @@ from requests import Request
 
 def main(request: Request):
     api_key = os.getenv('API_KEY')
-    project_id = os.getenv('GCP_PROJECT')
+    project_id = os.getenv('PROJECT_ID')
 
     print(project_id)
 
