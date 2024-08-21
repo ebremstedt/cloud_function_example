@@ -9,7 +9,7 @@ def main(request: Request):
     api_key = os.getenv('API_KEY')
 
     api_url = "http://api.weatherapi.com/v1/history.json"
-    destination_table = f"cloud-functions-example-433209.raw.weather"
+    destination_table = f"cloud-function-example-433209.raw.weather"
 
     data = fetch_weather_data(
         api_key=api_key,
