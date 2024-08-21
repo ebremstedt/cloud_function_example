@@ -7,12 +7,9 @@ from requests import Request
 
 def main(request: Request):
     api_key = os.getenv('API_KEY')
-    project_id = os.getenv('PROJECT_ID')
-
-    print(project_id)
 
     api_url = "http://api.weatherapi.com/v1/history.json"
-    destination_table = f"{project_id}.raw.weather"
+    destination_table = f"cloud-functions-example-433209.raw.weather"
 
     data = fetch_weather_data(
         api_key=api_key,
