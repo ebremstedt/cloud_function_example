@@ -1,17 +1,18 @@
 import json
+from typing import Dict, List
 import pendulum
 
 
-def parse_json_response(data: str):
+def parse_json_response(data: str) -> List[Dict]:
 
     data_dict = json.loads(s=data)
-
-    print(data_dict)
 
     formatted_data = {
         'location': data_dict['location'],
         'hour': data_dict['forecast']['forecastday'][0]['hour']
     }
+
+    # Visa exempel om list comprehension
 
     parsed_json_response = []
     for hour in formatted_data['hour']:
