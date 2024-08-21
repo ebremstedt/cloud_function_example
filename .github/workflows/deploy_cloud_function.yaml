@@ -29,4 +29,4 @@ jobs:
           --trigger-http \
           --entry-point=main\
           --allow-unauthenticated \
-          --source=./
+          --source=src/
