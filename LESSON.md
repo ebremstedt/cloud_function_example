@@ -1,4 +1,6 @@
-- Assume: local gcloud setup
+- Intro
+
+- Gcloud
 
 - Code a cloud function
 
@@ -9,3 +11,5 @@
 - Show setup in GCP
 
 - Whats next + questions + Eriks setup
+
+-

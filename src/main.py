@@ -27,7 +27,7 @@ def main(request: Request):
         date=date
     )
 
-    print("Transforming data...")
+    print("Transforming data...X")
 
     transformed_data = parse_json_response(data=data)
 
