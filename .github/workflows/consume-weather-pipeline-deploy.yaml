@@ -1,4 +1,4 @@
-name: Deploy Cloud Function
+name: Deploy google workflow pipelines/consume-weather/pipeline.yaml
 
 on:
   push:
