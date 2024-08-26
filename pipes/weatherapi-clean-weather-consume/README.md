@@ -1,0 +1,1 @@
+# script.sql is manually deployed to BigQuery

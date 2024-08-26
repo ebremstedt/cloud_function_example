@@ -1,0 +1,24 @@
+- Pipeline:
+    steps:
+        - set_timestamp:
+            assign:
+                - scheduled_date: ${time.format(sys.now())}
+        - log_scheduled_date:
+            call: sys.log
+            args:
+                text: ${"The scheduled date is:" + scheduled_date}
+                severity: "INFO"
+        - src-weather-raw:
+            call: http.get
+            args:
+                url: https://us-central1-cloud-function-example-433209.cloudfunctions.net/weatherapi-src-weather-raw
+                auth:
+                    type: OIDC
+                    audience: https://us-central1-cloud-function-example-433209.cloudfunctions.net/weatherapi-src-weather-raw
+        - raw-weather-clean:
+            call: http.get
+            args:
+                url: https://us-central1-cloud-function-example-433209.cloudfunctions.net/weatherapi-raw-weather-clean
+                auth:
+                    type: OIDC
+                    audience: https://us-central1-cloud-function-example-433209.cloudfunctions.net/weatherapi-raw-weather-clean
