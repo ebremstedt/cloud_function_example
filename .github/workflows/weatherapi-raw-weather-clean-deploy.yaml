@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  paths:
+      - 'pipes/weatherapi-raw-weather-clean/src/**'
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -21,9 +26,9 @@ jobs:
       with:
         credentials_json: '${{ secrets.GCP_SA_KEY }}'
 
-    - name: Deploy Cloud Function
+    - name: Deploy cloud function weatherapi-raw-weather-clean
       run: |
-        gcloud functions deploy cloud-functions-example \
+        gcloud functions deploy weatherapi-raw-weather-clean \
           --region=us-central1 \
           --runtime=python310 \
           --trigger-http \
