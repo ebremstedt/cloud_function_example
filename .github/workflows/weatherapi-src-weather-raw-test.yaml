@@ -4,11 +4,14 @@ on:
   push:
     branches:
       - main
-  paths:
-      - 'pipes/weatherapi-src-weather-raw/src/**'
+    paths:
+      - 'pipes/weatherapi-raw-weather-raw/src/**'
   pull_request:
     branches:
       - main
+    paths:
+      - 'pipes/weatherapi-raw-weather-raw/src/**'
+
 
 jobs:
   test:
