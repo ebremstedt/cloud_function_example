@@ -25,6 +25,6 @@ jobs:
 
     - name: Deploy Workflow
       run: |
-        gcloud workflows deploy my-workflow \
+        gcloud workflows deploy consume-weather \
           --location=us-central1 \
           --source=pipelines/consume-weather/pipeline.yaml
