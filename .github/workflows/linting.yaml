@@ -1,15 +1,12 @@
-name: Tests
+name: Linting
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,12 +18,11 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Install dependencies
+    - name: Install Ruff
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install pytest
+        pip install ruff
 
-    - name: Run Tests
+    - name: Run Ruff Lint Check
       run: |
-        pytest pipes/weatherapi-raw-weather-clean/tests
+        ruff check .
